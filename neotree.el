@@ -1264,9 +1264,9 @@ Optional NODE-NAME is used for the `icons' theme"
       (unless (require 'all-the-icons nil 'noerror)
         (error "Package `all-the-icons' isn't installed"))
       (setq-local tab-width 1)
-      (or (and (equal name 'open)  (insert (all-the-icons-icon-for-dir (directory-file-name node-name) "down")))
-          (and (equal name 'close) (insert (all-the-icons-icon-for-dir (directory-file-name node-name) "right")))
-          (and (equal name 'leaf)  (insert (format "\t\t\t%s\t" (all-the-icons-icon-for-file node-name))))))
+      (or (and (equal name 'open)  (insert (all-the-icons-icon-for-dir (directory-file-name node-name) "left" " ")))
+          (and (equal name 'close) (insert (all-the-icons-icon-for-dir (directory-file-name node-name) "right" " ")))
+          (and (equal name 'leaf)  (insert (format "\t\t\t%s " (all-the-icons-icon-for-file node-name))))))
      (t
       (or (and (equal name 'open)  (funcall n-insert-symbol "- "))
           (and (equal name 'close) (funcall n-insert-symbol "+ ")))))))
